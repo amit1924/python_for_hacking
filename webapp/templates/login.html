@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the page -->
+    <title>login</title>
+  </head>
+  <body>
+    <!-- Main heading -->
+    <h1>Login</h1>
+<div>
+    <form action="/login" method="post" style="text-align:center;margin:55px">
+      <input type="text" name="username" placeholder="Enter your username"/></br></br></br>
+      <input type="password" name="password" placeholder="Enter your password" /><br></br></br>
+
+    <button id="btn">Submit</button>
+    </form>
+</div>
+    <!-- <div>welcome {{ user_input | safe }}</div> -->
+   <script>
+    let button = document.getElementById("btn");
+    btn.addEventListener("click",() =>{
+           alert("form submitted")
+    })
+   </script>
+  </body>
+</html>

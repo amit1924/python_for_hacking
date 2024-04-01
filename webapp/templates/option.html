@@ -1,16 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the page -->
+    <title>Optional</title>
+  </head>
+  <body>
+    <a
+      href="/login"
+      style="text-decoration: none; margin-right: 0; font-size: 45px"
+      >Login</a
+    >
 
+    <h1>Optional pages</h1>
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Optional</title>
-      
-    </head>
-    <body>
-      <h1>Optional pages</h1>
-      <img href="/static/bird.jpg">
-    </body>
-  </html>
+    <!-- Image with source from static directory -->
+    <img src="/static/bird.jpg" alt="bird" width="50%" height="50%" />
+    <!-- Form to submit data to /option route using POST method -->
+    <form action="/option" method="post">
+      <!-- Input field for user input -->
+      <input type="text" name="xss_input" />
+      <!-- Submit button -->
+      <input type="submit" value="submit" />
+    </form>
+    <!-- Displaying user input -->
+    <div>{{ user_input | safe }}</div>
+  </body>
 </html>
+
+<!-- In your template, {{ user_input | safe }} ensures that the value
+of user_input is treated as safe HTML and rendered as-is without escaping HTML
+entities. This can be useful when you're confident that the input is safe and
+don't want Flask to escape it. However, it's important to be cautious when using
+safe, as it can potentially expose your application to XSS vulnerabilities if
+used with untrusted data.  -->
