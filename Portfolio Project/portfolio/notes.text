@@ -1,0 +1,4 @@
+pip install django
+pip install pillow
+python -m django startproject portfolio
+python manage.py startapp main
